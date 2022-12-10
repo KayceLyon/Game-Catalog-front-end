@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 
+import GameForm from "./components/GameForm"
+
 const App = () => {
 
   const [games, setGames] = useState([])
@@ -62,14 +64,7 @@ const App = () => {
     
           <main className="container form-div" id="Game">
         <h1>Insert Game Information!</h1>
-      <form className='form-group' onSubmit={handleNewGame}>
-          <input class="form-control origin" type='text' onChange={handleNewImage} placeholder="Image URL" /><br/>
-          <input class="form-control origin" type='text' onChange={handleNewTitle} placeholder="Name of Game"/><br/>
-          <input class="form-control origin" type='text' onChange={handleNewCreator} placeholder="Creator of Game"/><br/>
-          <input class="form-control origin" type='text' onChange={handleNewGenre} placeholder="Game/Series Title"/><br/>
-          <input class="form-control origin" type='text' onChange={handleNewStudio} placeholder="Design Studios"/><br/>
-          <input type='submit' value="Add Game" />
-        </form>
+        <GameForm handleNewGame = {handleNewGame} handleNewTitle = {handleNewTitle} handleNewCreator = {newCreator} handleNewGenre = {handleNewCreator} handleNewImage = {handleNewImage} handleNewStudio = {handleNewStudio}></GameForm>
       </main>
     
   )
