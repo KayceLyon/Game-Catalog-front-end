@@ -1,7 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 import GameForm from "./components/GameForm"
+import Navigation from "./components/Navigation"
 
 const App = () => {
 
@@ -63,6 +66,7 @@ const App = () => {
   return (
     
           <main className="container form-div" id="Game">
+        <Navigation />
         <h1>Insert Game Information!</h1>
         <GameForm handleNewGame = {handleNewGame} handleNewTitle = {handleNewTitle} handleNewCreator = {newCreator} handleNewGenre = {handleNewCreator} handleNewImage = {handleNewImage} handleNewStudio = {handleNewStudio}></GameForm>
       </main>
