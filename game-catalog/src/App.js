@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import GameForm from "./components/GameForm"
 import Navigation from "./components/Navigation"
+import Index from "./components/Index"
 
 const App = () => {
 
@@ -69,6 +70,7 @@ const App = () => {
         <Navigation />
         <h1>Insert Game Information!</h1>
         <GameForm handleNewGame = {handleNewGame} handleNewTitle = {handleNewTitle} handleNewCreator = {newCreator} handleNewGenre = {handleNewCreator} handleNewImage = {handleNewImage} handleNewStudio = {handleNewStudio}></GameForm>
+        <Index />
       </main>
     
   )
