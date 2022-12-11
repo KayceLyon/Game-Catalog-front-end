@@ -31,7 +31,8 @@ const App = () => {
         <h1>Insert Game Information!</h1>
         <GameForm 
         newTitle={newTitle} newCreator={newCreator} newImage={newImage} newStudio={newStudio} newGenre={newGenre}  
-        setGames={setGames} setNewTitle={setNewTitle} setNewCreator={setNewCreator} setNewStudio={setNewStudio} setNewGenre={setNewGenre} setNewImage={setNewImage}/>
+        setGames={setGames} setNewTitle={setNewTitle} setNewCreator={setNewCreator} setNewStudio={setNewStudio} setNewGenre={setNewGenre} setNewImage={setNewImage}
+        /> 
       </main>
     
   )

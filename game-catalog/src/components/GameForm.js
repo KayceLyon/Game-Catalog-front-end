@@ -3,8 +3,6 @@ import axios from 'axios'
 
 
 const GameForm = (props) => {
-
-
   const handleNewTitle = (game) => {
     props.setNewTitle(game.target.value)
   }
@@ -42,6 +40,7 @@ const GameForm = (props) => {
           props.setGames(response.data)
         })
       })
+  g.target.reset()
 }
 
 
