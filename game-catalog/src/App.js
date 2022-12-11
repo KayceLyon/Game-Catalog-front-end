@@ -1,7 +1,12 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 import GameForm from "./components/GameForm"
+import Navigation from "./components/Navigation"
+import Index from "./components/Index"
+import EditForm from "./components/EditForm"
 
 const App = () => {
 
@@ -27,12 +32,14 @@ const App = () => {
 
   return (
     
-          <main className="container form-div" id="Game">
-        <h1>Insert Game Information!</h1>
-        <GameForm 
-        newTitle={newTitle} newCreator={newCreator} newImage={newImage} newStudio={newStudio} newGenre={newGenre}  
-        setGames={setGames} setNewTitle={setNewTitle} setNewCreator={setNewCreator} setNewStudio={setNewStudio} setNewGenre={setNewGenre} setNewImage={setNewImage}
-        /> 
+        <main className="container form-div" id="Game">
+          <Navigation />
+          <h1>Insert Game Information!</h1>
+          <GameForm 
+          newTitle={newTitle} newCreator={newCreator} newImage={newImage} newStudio={newStudio} newGenre={newGenre}  
+          setGames={setGames} setNewTitle={setNewTitle} setNewCreator={setNewCreator} setNewStudio={setNewStudio} setNewGenre={setNewGenre} setNewImage={setNewImage}/>
+          <Index />
+          <EditForm />
       </main>
     
   )
