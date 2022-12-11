@@ -1,79 +1,64 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
+import Col from 'react-bootstrap/Col'
+import Row from 'react-bootstrap/Row'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import './App.css'
 
 import GameForm from "./components/GameForm"
 import Navigation from "./components/Navigation"
 import Index from "./components/Index"
 import EditForm from "./components/EditForm"
+// import Cards from './components/Cards'
 
 const App = () => {
 
   const [games, setGames] = useState([])
-
   const [newTitle, setNewTitle] = useState('')
   const [newCreator, setNewCreator] = useState('')
   const [newStudio, setNewStudio] = useState('')
   const [newGenre, setNewGenre] = useState('')
   const [newImage, setNewImage] = useState('')
 
-  const handleNewTitle = (game) => {
-    setNewTitle(game.target.value)
-  }
-
-  const handleNewCreator = (game) => {
-    setNewCreator(game.target.value)
-  }
-
-  const handleNewStudio = (game) => {
-    setNewStudio(game.target.value)
-  }
-
-  const handleNewGenre = (game) => {
-    setNewGenre(game.target.value)
-  }
-
-  const handleNewImage = (game) => {
-    setNewImage(game.target.value)
-  }
-
-  const handleNewGame = (game) => {
-    axios.post(
-      'http://localhost:3000/games',
-      {
-        title: newTitle,
-        creator: newCreator,
-        studio: newStudio,
-        genre: newGenre,
-        image: newImage,
-      }.then(()=>{
-        axios
-        .get('http://localhost:3000/games')
-        .then((response)=>{
-          setGames(response.data)
-        })
-      })
-    )
-  }
-  useEffect(()=>{
+  const getGamesDB = (e) =>{
     axios
-      .get('http://localhost:3000/games')
-      .then((response)=>{
-        setGames(response.data)
-      })
+    .get('http://localhost:3000/games')
+    .then((response)=>{
+      setGames(response.data)
+    })
+  }
+  
+  useEffect(()=>{
+    getGamesDB()
   }, []);
 
 
   return (
-    
-          <main className="container form-div" id="Game">
-        <Navigation />
-        <h1>Insert Game Information!</h1>
-        <GameForm handleNewGame = {handleNewGame} handleNewTitle = {handleNewTitle} handleNewCreator = {newCreator} handleNewGenre = {handleNewCreator} handleNewImage = {handleNewImage} handleNewStudio = {handleNewStudio}></GameForm>
-        <Index />
-        <EditForm />
+    <div className='container'>
+        <main className="form-div" id="Game">
+          <Navigation />
       </main>
+      <section >
+      <main id="Create" className='create-section'>
+        <GameForm newTitle={newTitle} newCreator={newCreator} 
+          newImage={newImage} newStudio={newStudio} newGenre={newGenre} 
+          setGames={setGames} setNewTitle={setNewTitle} setNewCreator={setNewCreator} 
+          setNewStudio={setNewStudio} setNewGenre={setNewGenre} setNewImage={setNewImage} />
+        </main>
+        </section>
+        <main id="Index" className='index-section'>
+    <Row xs={1} md={4} className="g-4">
+            {games.map((game)=>{ 
+              return(
+            <Col>
+            <Index key={game._id} title={game.title} creator={game.creator} image={game.image} studio={game.studio} genre={game.genre}/> 
+              </Col>  )})} 
+      </Row>
+         </main>
+        <main id="Edit" className='edit-section' >
+          <EditForm />
+        </main>
+  </div>
     
   )
 }
