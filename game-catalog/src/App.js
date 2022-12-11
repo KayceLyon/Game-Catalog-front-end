@@ -1,13 +1,15 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
+import Col from 'react-bootstrap/Col'
+import Row from 'react-bootstrap/Row'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import './App.css'
 
 import GameForm from "./components/GameForm"
 import Navigation from "./components/Navigation"
 import Index from "./components/Index"
 import EditForm from "./components/EditForm"
-import Cards from './components/Cards'
+// import Cards from './components/Cards'
 
 const App = () => {
 
@@ -36,14 +38,26 @@ const App = () => {
         <main className="form-div" id="Game">
           <Navigation />
       </main>
- 
-        <GameForm 
-          newTitle={newTitle} newCreator={newCreator} newImage={newImage} newStudio={newStudio} newGenre={newGenre}  
-          setGames={setGames} setNewTitle={setNewTitle} setNewCreator={setNewCreator} setNewStudio={setNewStudio} setNewGenre={setNewGenre} setNewImage={setNewImage}/>
-           {games.map((game)=>{ 
-            return(
-          <Index key={game._id} title={game.title} creator={game.creator} image={game.image} studio={game.studio} genre={game.genre}/> )})} 
+      <section >
+      <main id="Create" className='create-section'>
+        <GameForm newTitle={newTitle} newCreator={newCreator} 
+          newImage={newImage} newStudio={newStudio} newGenre={newGenre} 
+          setGames={setGames} setNewTitle={setNewTitle} setNewCreator={setNewCreator} 
+          setNewStudio={setNewStudio} setNewGenre={setNewGenre} setNewImage={setNewImage} />
+        </main>
+        </section>
+        <main id="Index" className='index-section'>
+    <Row xs={1} md={4} className="g-4">
+            {games.map((game)=>{ 
+              return(
+            <Col>
+            <Index key={game._id} title={game.title} creator={game.creator} image={game.image} studio={game.studio} genre={game.genre}/> 
+              </Col>  )})} 
+      </Row>
+         </main>
+        <main id="Edit" className='edit-section' >
           <EditForm />
+        </main>
   </div>
     
   )
