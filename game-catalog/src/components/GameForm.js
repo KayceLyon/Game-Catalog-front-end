@@ -45,6 +45,8 @@ const GameForm = (props) => {
 
 
     return (
+      <div>
+      <h1>Insert Game Information!</h1>
         <form className='form-group' onSubmit={handleNewGame}>
           <input class="form-control origin" type='text' name='image' onChange={handleNewImage} placeholder="Image URL" /><br/>
           <input class="form-control origin" type='text' name='title' onChange={handleNewTitle} placeholder="Title of Game"/><br/>
@@ -53,6 +55,7 @@ const GameForm = (props) => {
           <input class="form-control origin" type='text' name='studio' onChange={handleNewStudio} placeholder="Design Studios"/><br/>
           <input type='submit' value="Add Game" />
         </form>
+      </div>
     )
 }
 
