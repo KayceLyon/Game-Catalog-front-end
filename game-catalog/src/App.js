@@ -9,6 +9,8 @@ import GameForm from "./components/GameForm"
 import Navigation from "./components/Navigation"
 import Index from "./components/Index"
 import EditForm from "./components/EditForm"
+import Delete from "./components/Delete"
+
 // import Cards from './components/Cards'
 
 const App = () => {
@@ -57,13 +59,12 @@ const App = () => {
             {games.map((game)=>{ 
               return(
             <Col>
-            <Index key={game._id} title={game.title} developer={game.developer} image={game.image} studio={game.studio} genre={game.genre}/> 
-              </Col>  
-              )})} 
+            <Index game = {game} key={game._id} title={game.title} creator={game.creator} image={game.image} studio={game.studio} genre={game.genre}/> 
+              </Col>  )})} 
       </Row>
          </main>
         <main id="Edit" className='edit-section' >
-        <EditForm formData = {formData} setFormData = {setFormData} games = {games} setGames = {setGames} />
+            <EditForm formData = {formData} setFormData = {setFormData} games = {games} setGames = {setGames} />
         </main>
   </div>
     

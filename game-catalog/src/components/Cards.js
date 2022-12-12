@@ -1,8 +1,11 @@
 import React from 'react'
-import Card from 'react-bootstrap/Card';
+import Card from 'react-bootstrap/Card'
+import axios from 'axios'
+
+
 
 const Cards = (props) => {
-   
+    
   return (
      <Card className="bg-dark text-white game-cards" key={props._id}>
                 <Card.Img src={props.image} className="card-img" alt="Card image" />
