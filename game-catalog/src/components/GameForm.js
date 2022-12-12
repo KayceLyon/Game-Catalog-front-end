@@ -42,7 +42,7 @@ const GameForm = (props) => {
           <input class="form-control origin" type='text' name='creator' onChange={handleChange} placeholder="Developer(s)" value={props.formData.developer}/><br/>
           <input class="form-control origin" type='text' name='genre' onChange={handleChange} placeholder="Genre(s)" value={props.formData.genre}/><br/>
           <input class="form-control origin" type='text' name='studio' onChange={handleChange} placeholder="Publisher(s)" value={props.formData.publisher}/><br/>
-          <input type='submit' value="Add Game" />
+          <button><input type='submit' value="Add Game" /></button>
         </form>
       </div>
     )
