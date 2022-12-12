@@ -57,12 +57,13 @@ const App = () => {
             {games.map((game)=>{ 
               return(
             <Col>
-            <Index key={game._id} title={game.title} creator={game.creator} image={game.image} studio={game.studio} genre={game.genre}/> 
-              </Col>  )})} 
+            <Index key={game._id} title={game.title} developer={game.developer} image={game.image} studio={game.studio} genre={game.genre}/> 
+              </Col>  
+              )})} 
       </Row>
          </main>
         <main id="Edit" className='edit-section' >
-            <EditForm formData = {formData} setFormData = {setFormData} games = {games} setGames = {setGames} />
+        <EditForm formData = {formData} setFormData = {setFormData} games = {games} setGames = {setGames} />
         </main>
   </div>
     

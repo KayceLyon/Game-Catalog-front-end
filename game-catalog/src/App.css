@@ -22,9 +22,10 @@ html {
 height: 300px;
 object-fit: contain;
 }
+
 .card-img{
   height: 50%;
   width: 100%;
 object-fit:contain;
-
+background-color: white;
 } 
