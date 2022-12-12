@@ -14,11 +14,20 @@ import EditForm from "./components/EditForm"
 const App = () => {
 
   const [games, setGames] = useState([])
-  const [newTitle, setNewTitle] = useState('')
-  const [newCreator, setNewCreator] = useState('')
-  const [newStudio, setNewStudio] = useState('')
-  const [newGenre, setNewGenre] = useState('')
-  const [newImage, setNewImage] = useState('')
+  const [formData, setFormData] = useState({
+    title: "",
+    developer: "",
+    studio: "",
+    genre: "",
+    image: "",
+    completed: false,
+  })
+
+  // const [newTitle, setNewTitle] = useState('')
+  // const [newCreator, setNewCreator] = useState('')
+  // const [newStudio, setNewStudio] = useState('')
+  // const [newGenre, setNewGenre] = useState('')
+  // const [newImage, setNewImage] = useState('')
 
   const getGamesDB = (e) =>{
     axios
@@ -40,10 +49,7 @@ const App = () => {
       </main>
       <section >
       <main id="Create" className='create-section'>
-        <GameForm newTitle={newTitle} newCreator={newCreator} 
-          newImage={newImage} newStudio={newStudio} newGenre={newGenre} 
-          setGames={setGames} setNewTitle={setNewTitle} setNewCreator={setNewCreator} 
-          setNewStudio={setNewStudio} setNewGenre={setNewGenre} setNewImage={setNewImage} />
+        <GameForm formData = {formData} setFormData = {setFormData} setGames = {setGames}/>
         </main>
         </section>
         <main id="Index" className='index-section'>
@@ -56,7 +62,7 @@ const App = () => {
       </Row>
          </main>
         <main id="Edit" className='edit-section' >
-          <EditForm />
+            <EditForm formData = {formData} setFormData = {setFormData} games = {games} setGames = {setGames} />
         </main>
   </div>
     
