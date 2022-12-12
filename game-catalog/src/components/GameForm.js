@@ -18,8 +18,8 @@ const GameForm = (props) => {
       'http://localhost:3000/games',
       {
         title: props.formData.title,
-        creator: props.formData.creator,
-        studio: props.formData.studio,
+        developer: props.formData.developer,
+        publisher: props.formData.publisher,
         genre: props.formData.genre,
         image: props.formData.image,
       }).then(()=>{
@@ -38,10 +38,10 @@ const GameForm = (props) => {
       <h1>Insert Game Information!</h1>
         <form className='form-group' onSubmit={handleNewGame}>
           <input class="form-control origin" type='text' name='image' onChange={handleChange} placeholder="Image URL" value={props.formData.image} /><br/>
-          <input class="form-control origin" type='text' name='title' onChange={handleChange} placeholder="Title of Game" value={props.formData.title}/><br/>
-          <input class="form-control origin" type='text' name='creator' onChange={handleChange} placeholder="Game Creator" value={props.formData.creator}/><br/>
-          <input class="form-control origin" type='text' name='genre' onChange={handleChange} placeholder="Game Genre" value={props.formData.genre}/><br/>
-          <input class="form-control origin" type='text' name='studio' onChange={handleChange} placeholder="Design Studios" value={props.formData.studio}/><br/>
+          <input class="form-control origin" type='text' name='title' onChange={handleChange} placeholder="Title" value={props.formData.title}/><br/>
+          <input class="form-control origin" type='text' name='creator' onChange={handleChange} placeholder="Developer(s)" value={props.formData.developer}/><br/>
+          <input class="form-control origin" type='text' name='genre' onChange={handleChange} placeholder="Genre(s)" value={props.formData.genre}/><br/>
+          <input class="form-control origin" type='text' name='studio' onChange={handleChange} placeholder="Publisher(s)" value={props.formData.publisher}/><br/>
           <input type='submit' value="Add Game" />
         </form>
       </div>
