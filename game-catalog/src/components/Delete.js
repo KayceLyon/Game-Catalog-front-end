@@ -17,7 +17,7 @@ const handleDelete = (gameData)=> {
 
   return (
     <button onClick={()=> {
-        handleDelete(params.game)}}>
+        {handleDelete(params.game)}}}>
             Delete                        
     </button>  )
 

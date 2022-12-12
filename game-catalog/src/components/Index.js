@@ -1,8 +1,8 @@
 import React from 'react'
 import Cards from './Cards'
 
-
 const Index = (props) => {
+ 
     return (
         <>
             <Cards 
@@ -11,8 +11,10 @@ const Index = (props) => {
             creator={props.creator} 
             image={props.image} 
             studio={props.studio} 
-            genre={props.genre} />
-            
+            genre={props.genre} 
+            game={props.game}
+            />
+
         </>
     )
 }

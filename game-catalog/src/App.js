@@ -59,8 +59,8 @@ const App = () => {
             {games.map((game)=>{ 
               return(
             <Col>
-            <Index game = {game} key={game._id} title={game.title} creator={game.creator} image={game.image} studio={game.studio} genre={game.genre}/> 
-              </Col>  )})} 
+            <Index game ={game} key={game._id} title={game.title} creator={game.creator} image={game.image} studio={game.studio} genre={game.genre}/> 
+               </Col>  )})} 
       </Row>
          </main>
         <main id="Edit" className='edit-section' >
