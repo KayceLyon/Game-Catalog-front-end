@@ -24,9 +24,6 @@ const Index = (params) => {
 
   return (
     <div className='container'>
-        <main className="form-div" id="Game">
-          <Navigation />
-        </main>
         <main id="Index" className='index-section'>
             <Row xs={1} md={4} className="g-4">
                 {params.games.map((game)=>{ 

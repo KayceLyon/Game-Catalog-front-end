@@ -8,7 +8,7 @@ import React, {useState, useEffect} from 'react'
 
 import Index from './components/Index'
 import EditForm from './components/EditForm'
-import Games from './components/Games'
+import Navigation from './components/Navigation'
 
 const App = () => {
 
@@ -25,11 +25,14 @@ const App = () => {
   return (
     <>
     <Routes>
+      <Route path = "/games" element={<Navigation />}>
+        <Route index element={<Index games = {games} setGames = {setGames}/>} /> 
+        <Route path="new" element={<GameForm formData = {formData} setFormData = {setFormData} setGames = {setGames}/>} />
+        <Route path="edit/:id" element={<EditForm formData = {formData} setFormData = {setFormData} games = {games} setGames = {setGames}/>} />
+      </Route>
       <Route path="/*" element={<Navigate to="/games" />} />
-      <Route path="/games" element={<Index games = {games} setGames = {setGames}/>} /> 
-      <Route path="/games/new" element={<GameForm formData = {formData} setFormData = {setFormData} setGames = {setGames}/>} />
-      <Route path="/games/edit/:id" element={<EditForm formData = {formData} setFormData = {setFormData} games = {games} setGames = {setGames}/>} />
-      <Route path="/games" element={<Games games = {games}/>} />
+      
+      {/* <Route path="/games" element={<Games games = {games}/>} /> */}
     </Routes>
     
     </>    
