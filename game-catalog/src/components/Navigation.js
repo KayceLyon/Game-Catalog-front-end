@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 // import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 // import Form from 'react-bootstrap/Form';
@@ -13,7 +14,7 @@ const Navigation = () => {
         <>
         <Navbar bg="light" expand="lg">
       <Container fluid>
-        <Navbar.Brand href="#">Game2Play</Navbar.Brand>
+        <Navbar.Brand as={Link} to={"/games"}>Game2Play</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -21,11 +22,10 @@ const Navigation = () => {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#">Home</Nav.Link>
-            <Nav.Link href="#Index">Games</Nav.Link>
+            <Nav.Link as={Link} to={"/games"}>Home</Nav.Link>
             <NavDropdown title="Forms" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Add Games</NavDropdown.Item>
-              <NavDropdown.Item href="#Edit">
+              <NavDropdown.Item as={Link} to={"/games/new"}>Add Games</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to={"/games/edit/:id"}>
                 Edit Games
               </NavDropdown.Item>
             </NavDropdown>
