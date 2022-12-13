@@ -13,7 +13,7 @@ const EditForm = (params) => {
     const handleEdit = (gameData)=> {
         axios 
           .put(
-            `http://localhost:3000/games/${gameData._id}`,
+            `http://localhost:3000/games/edit/${gameData._id}`,
             {
                 title: params.formData.title,
                 developer: params.formData.creator,
@@ -33,11 +33,11 @@ const EditForm = (params) => {
     return (
         <>
         <form className='form-group' onSubmit={handleEdit}>
-          <input class="form-control origin" type='text' onChange={handleChange} placeholder="Image URL" defaultValue={params.formData.image} /><br/>
-          <input class="form-control origin" type='text' onChange={handleChange} placeholder="Title" defaultValue={params.formData.title}/><br/>
-          <input class="form-control origin" type='text' onChange={handleChange} placeholder="Developer(s)" defaultValue={params.formData.developer}/><br/>
-          <input class="form-control origin" type='text' onChange={handleChange} placeholder="Genre(s)" defaultValue={params.formData.genre}/><br/>
-          <input class="form-control origin" type='text' onChange={handleChange} placeholder="Publisher(s)" defaultValue={params.formData.publisher}/><br/>
+          <input className="form-control origin" type='text' onChange={handleChange} placeholder="Image URL" defaultValue={params.formData.image} /><br/>
+          <input className="form-control origin" type='text' onChange={handleChange} placeholder="Title" defaultValue={params.formData.title}/><br/>
+          <input className="form-control origin" type='text' onChange={handleChange} placeholder="Developer(s)" defaultValue={params.formData.developer}/><br/>
+          <input className="form-control origin" type='text' onChange={handleChange} placeholder="Genre(s)" defaultValue={params.formData.genre}/><br/>
+          <input className="form-control origin" type='text' onChange={handleChange} placeholder="Publisher(s)" defaultValue={params.formData.publisher}/><br/>
           <input type='submit' value="Edit Game" />
         </form>
         </>
