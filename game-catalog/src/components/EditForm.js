@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import Navigation from './Navigation'
 
 const EditForm = (params) => {
     const handleChange = (event)=> {
@@ -32,6 +33,7 @@ const EditForm = (params) => {
 
     return (
         <>
+        <Navigation />
         <form className='form-group' onSubmit={handleEdit}>
           <input className="form-control origin" type='text' onChange={handleChange} placeholder="Image URL" defaultValue={params.formData.image} /><br/>
           <input className="form-control origin" type='text' onChange={handleChange} placeholder="Title" defaultValue={params.formData.title}/><br/>
