@@ -37,11 +37,11 @@ const GameForm = (props) => {
       <div>
       <h1>Insert Game Information!</h1>
         <form className='form-group' onSubmit={handleNewGame}>
-          <input class="form-control origin" type='text' name='image' onChange={handleChange} placeholder="Image URL" value={props.formData.image} /><br/>
-          <input class="form-control origin" type='text' name='title' onChange={handleChange} placeholder="Title" value={props.formData.title}/><br/>
-          <input class="form-control origin" type='text' name='creator' onChange={handleChange} placeholder="Developer(s)" value={props.formData.developer}/><br/>
-          <input class="form-control origin" type='text' name='genre' onChange={handleChange} placeholder="Genre(s)" value={props.formData.genre}/><br/>
-          <input class="form-control origin" type='text' name='studio' onChange={handleChange} placeholder="Publisher(s)" value={props.formData.publisher}/><br/>
+          <input className="form-control origin" type='text' name='image' onChange={handleChange} placeholder="Image URL" value={props.formData.image} /><br/>
+          <input className="form-control origin" type='text' name='title' onChange={handleChange} placeholder="Title" value={props.formData.title}/><br/>
+          <input className="form-control origin" type='text' name='developer' onChange={handleChange} placeholder="Developer(s)" value={props.formData.developer}/><br/>
+          <input className="form-control origin" type='text' name='genre' onChange={handleChange} placeholder="Genre(s)" value={props.formData.genre}/><br/>
+          <input className="form-control origin" type='text' name='studio' onChange={handleChange} placeholder="Publisher(s)" value={props.formData.publisher}/><br/>
           <button><input type='submit' value="Add Game" /></button>
         </form>
       </div>
