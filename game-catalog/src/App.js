@@ -1,20 +1,15 @@
 import {Route, Routes, Navigate, useSearchParams} from 'react-router-dom'
 import GameForm from './components/GameForm'
 import React, {useState, useEffect} from 'react'
-// import axios from 'axios'
-// import Col from 'react-bootstrap/Col'
-// import Row from 'react-bootstrap/Row'
-// import './App.css'
 
 import Index from './components/Index'
 import EditForm from './components/EditForm'
 import Navigation from './components/Navigation'
+import Signup from './components/Signup'
+import Login from './components/Login'
 
 const App = () => {
 
-  const [searchParams, setSearchParams] = useSearchParams({query: ""})
-  const [filteredGames, setFilteredGames] = useState([])
-  console.log(filteredGames)
   const [games, setGames] = useState([])
   const [formData, setFormData] = useState({
     title: "",
@@ -23,6 +18,13 @@ const App = () => {
     genre: "",
     image: "",
     completed: false,
+  })
+  const [searchParams, setSearchParams] = useSearchParams({query: ""})
+  const [filteredGames, setFilteredGames] = useState([])
+  const [user, setUser] = useState({
+    username: "",
+    password: "",
+    email: ""
   })
 
   return (
@@ -33,7 +35,14 @@ const App = () => {
         <Route path="new" element={<GameForm formData = {formData} setFormData = {setFormData} setGames = {setGames}/>} />
         <Route path="edit/:id" element={<EditForm formData = {formData} setFormData = {setFormData} games = {games} setGames = {setGames}/>} />
       </Route>
-      <Route path="*" element={<Navigate to="/games" />} />
+      <Route path = "/users" element={<Navigation />} >
+        <Route path="signup" element={<Signup />} />
+x      </Route>
+      <Route path="/sessions" element={<Navigation />}> 
+        <Route path="new" element={<Login />} />
+      </Route>
+      <Route path="/" element={<Navigate to="/games" />} />
+
     </Routes>
     
     </>    

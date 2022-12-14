@@ -1,8 +1,6 @@
 import React from 'react'
 import {Link, Outlet} from 'react-router-dom'
-// import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-// import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
@@ -22,6 +20,9 @@ const Navigation = (params) => {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
+            <Nav.Link as={Link} to={"/users/signup"}>Sign-Up</Nav.Link>
+            <NavDropdown title="Profile" id="navbarScrollingDropdown">
+            </NavDropdown>
             <NavDropdown title="Forms" id="navbarScrollingDropdown">
               <NavDropdown.Item as={Link} to={"/games/new"}>Add Games</NavDropdown.Item>
               <NavDropdown.Item as={Link} to={"/games/edit/:id"}>
