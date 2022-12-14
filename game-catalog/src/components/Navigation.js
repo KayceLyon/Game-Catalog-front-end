@@ -22,7 +22,6 @@ const Navigation = (params) => {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link as={Link} to={"/games"}>Home</Nav.Link>
             <NavDropdown title="Forms" id="navbarScrollingDropdown">
               <NavDropdown.Item as={Link} to={"/games/new"}>Add Games</NavDropdown.Item>
               <NavDropdown.Item as={Link} to={"/games/edit/:id"}>
@@ -33,7 +32,7 @@ const Navigation = (params) => {
               GG
             </Nav.Link>
           </Nav>
-            <Search games = {params.games} />
+            <Search games = {params.games} setGames = {params.setGames} searchParams = {params.searchParams} setSearchParams = {params.setSearchParams} filteredGames = {params.filteredGames} setFilteredGames = {params.setFilteredGames} />
         </Navbar.Collapse>
       </Container>
     </Navbar>

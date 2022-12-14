@@ -1,24 +1,35 @@
-import React, {useState} from 'react'
-import { useSearchParams } from 'react-router-dom';
+import React from 'react'
+import axios from 'axios'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 const Search = (params) => {
-    const [searchParams, setSearchParams] = useSearchParams({query: ""})
 
-    let titles = params.games.filter(games => games.title.includes(searchParams.get("query"))).map(filteredGames => (filteredGames.title))
-    console.log(titles)
+    const filteredGames = (unfilteredGames, query) => {
+        return (unfilteredGames.filter(games => games.title.toLowerCase().includes(query.toLowerCase()))).map(filteredGames => (filteredGames))
+    }
+
+    const filterGamesDB = (e) =>{
+        axios
+        .get('http://localhost:3000/games')
+        .then((response)=>{
+          params.setFilteredGames(filteredGames(response.data, params.searchParams.get("query")))
+          
+        })
+      }
+
     return (
         <>
             <Form className="d-flex">
                 <Form.Control
                 type="search"
-                placeholder="Search"
+                placeholder="Search by Title"
                 className="me-2"
                 aria-label="Search"
-                onChange={event => setSearchParams({query: event.target.value})}
+                onChange={(event) => params.setSearchParams({query: event.target.value})}
+                onClick={(event) => params.setFilteredGames(params.games)}
                 />
-                <Button variant="outline-success">Search</Button>
+                <Button onClick={filterGamesDB} variant="outline-success">Search</Button>
           </Form>
         </>
     )

@@ -13,6 +13,7 @@ const Index = (params) => {
     .get('http://localhost:3000/games')
     .then((response)=>{
       params.setGames(response.data)
+      params.setFilteredGames((response.data))
     })
   }
   
@@ -20,15 +21,14 @@ const Index = (params) => {
     getGamesDB()
   }, []);
 
-
   return (
     <div className='container'>
         <main id="Index" className='index-section'>
             <Row xs={1} md={4} className="g-4">
-                {params.games.map((game)=>{ 
+                {params.filteredGames.map((game)=>{ 
                     return(
                         <Col>
-                            <Games game ={params.game} key={game._id} title={game.title} creator={game.creator} image={game.image} studio={game.studio} genre={game.genre}/> 
+                            <Games game ={params.filteredGames} key={game._id} title={game.title} creator={game.creator} image={game.image} studio={game.studio} genre={game.genre}/> 
                         </Col>  )})} 
             </Row>
         </main>
