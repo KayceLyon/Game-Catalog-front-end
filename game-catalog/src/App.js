@@ -36,11 +36,9 @@ const App = () => {
         <Route path="edit/:id" element={<EditForm formData = {formData} setFormData = {setFormData} games = {games} setGames = {setGames}/>} />
       </Route>
       <Route path = "/users" element={<Navigation />} >
-        <Route path="signup" element={<Signup />} />
+          <Route path="signup" element={<Signup />} />
+          <Route path="login" element={<Login />} />
 x      </Route>
-      <Route path="/sessions" element={<Navigation />}> 
-        <Route path="new" element={<Login />} />
-      </Route>
       <Route path="/" element={<Navigate to="/games" />} />
 
     </Routes>
