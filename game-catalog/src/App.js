@@ -25,7 +25,7 @@ const App = () => {
   return (
     <>
     <Routes>
-      <Route path = "/games" element={<Navigation />}>
+      <Route path = "/games" element={<Navigation games = {games}/>}>
         <Route index element={<Index games = {games} setGames = {setGames}/>} /> 
         <Route path="new" element={<GameForm formData = {formData} setFormData = {setFormData} setGames = {setGames}/>} />
         <Route path="edit/:id" element={<EditForm formData = {formData} setFormData = {setFormData} games = {games} setGames = {setGames}/>} />

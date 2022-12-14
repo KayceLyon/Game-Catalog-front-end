@@ -4,7 +4,6 @@ import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import '../App.css'
 
-import Navigation from "./Navigation"
 import Games from './Games'
 
 const Index = (params) => {

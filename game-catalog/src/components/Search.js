@@ -3,12 +3,11 @@ import { useSearchParams } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
-
-
-const Search = () => {
+const Search = (params) => {
     const [searchParams, setSearchParams] = useSearchParams({query: ""})
-    console.log(searchParams.get("query"))
 
+    let titles = params.games.filter(games => games.title.includes(searchParams.get("query"))).map(filteredGames => (filteredGames.title))
+    console.log(titles)
     return (
         <>
             <Form className="d-flex">

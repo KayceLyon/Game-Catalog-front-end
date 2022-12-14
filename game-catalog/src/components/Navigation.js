@@ -9,7 +9,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 import Search from './Search'
 
-const Navigation = () => {
+const Navigation = (params) => {
     return (
         <>
         <Navbar bg="light" expand="lg">
@@ -33,7 +33,7 @@ const Navigation = () => {
               GG
             </Nav.Link>
           </Nav>
-            <Search />
+            <Search games = {params.games} />
         </Navbar.Collapse>
       </Container>
     </Navbar>
