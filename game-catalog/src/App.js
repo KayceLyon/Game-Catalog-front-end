@@ -16,7 +16,7 @@ const App = () => {
   const [formData, setFormData] = useState({
     title: "",
     developer: "",
-    studio: "",
+    publisher: "",
     genre: "",
     image: "",
     completed: false,
@@ -28,7 +28,7 @@ const App = () => {
       <Route path="/*" element={<Navigate to="/games" />} />
       <Route path="/games" element={<Index games = {games} setGames = {setGames}/>} /> 
       <Route path="/games/new" element={<GameForm formData = {formData} setFormData = {setFormData} setGames = {setGames}/>} />
-      <Route path="/games/edit/:id" element={<EditForm formData = {formData} setFormData = {setFormData} games = {games} setGames = {setGames}/>} />
+      <Route path="/games/edit/:id" element={<EditForm  games = {games} setGames = {setGames}/>} />
       <Route path="/games" element={<Games games = {games}/>} />
     </Routes>
     

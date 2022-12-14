@@ -1,56 +1,55 @@
 import React from "react";
-const Edit = ({ formData, handleCancelClick, handleChange}) => {
+const Edit = ({ game , handleEditSubmit, handleCancelClick, handleUpdateImg, handleUpdateTitle, handleUpdateDev, handleUpdatePub, handleUpdateGenre }) => {
 return (
 <tr>
     <td>
     <input 
             className="form-control origin" 
             type='text'  
-            placeholder="Image URL"
+            defaultValue={game.image} 
             name="image"
-            onChange={handleChange}
-            value={formData.image}    
+            onChange={handleUpdateImg}
+            key={game._id}
             ></input></td>
     <td> 
     <input 
             className="form-control origin" 
             type='text'  
-            placeholder="Title" 
+            defaultValue={game.title} 
             name="title" 
-            onChange={handleChange}
-            value={formData.title}    
+            onChange={handleUpdateTitle}
             ></input></td>
    <td> 
     <input 
             className="form-control origin" 
             type='text' 
-            placeholder="Developer(s)" 
+            defaultValue={game.developer} 
             name="developer" 
-            onChange={handleChange}
-            value={formData.developer}    
+            onChange={handleUpdateDev}
+            key={game._id}
             ></input></td>
     <td>
         <input
             className="form-control origin" 
             type='text' 
-            placeholder="Publisher(s)" 
+            defaultValue={game.publisher} 
             name="publisher" 
-            onChange={handleChange}
-            value={formData.publisher}    
+            onChange={handleUpdatePub}
+            key={game._id}
             ></input></td>
      <td> 
     <input 
             className="form-control origin" 
             type='text'  
-            placeholder="Genre(s)" 
+            defaultValue={game.genre}
             name="genre" 
-            onChange={handleChange}
-            value={formData.genre}    
+            onChange={handleUpdateGenre}
+            key={game._id}
             ></input></td>
         <td>
-        <button type="submit" > Save </button>
+        <button type="submit" onClick={() => {handleEditSubmit(game)}}> Save </button>
         <button type="button" onClick={handleCancelClick}>
-          Cancel
+          Return
         </button>
       </td>
     </tr>

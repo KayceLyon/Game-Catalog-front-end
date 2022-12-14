@@ -3,7 +3,7 @@ import Delete from './Delete'
 
 const Read = ({ game, handleEditClick, handleDelete }) => {
   return (
-    <tr>
+      <tr >
       <td><img className="table-image" src={game.image} /></td>
       <td>{game.title}</td>
       <td>{game.developer}</td>
@@ -18,6 +18,7 @@ const Read = ({ game, handleEditClick, handleDelete }) => {
         </button>
       </td>
     </tr>
+
   );
 };
 
