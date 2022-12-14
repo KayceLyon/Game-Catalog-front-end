@@ -1,10 +1,6 @@
 import {Route, Routes, Navigate} from 'react-router-dom'
 import GameForm from './components/GameForm'
-import React, {useState, useEffect} from 'react'
-// import axios from 'axios'
-// import Col from 'react-bootstrap/Col'
-// import Row from 'react-bootstrap/Row'
-// import './App.css'
+import React, {useState} from 'react'
 
 import Index from './components/Index'
 import EditForm from './components/EditForm'

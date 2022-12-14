@@ -1,5 +1,4 @@
 import React from "react";
-import Delete from './Delete'
 
 const Read = ({ game, handleEditClick, handleDelete }) => {
   return (

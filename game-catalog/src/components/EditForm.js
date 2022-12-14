@@ -119,33 +119,3 @@ useEffect(()=>{
 }
 
 export default EditForm
-
-  // const [updatedImage, setUpdatedImage] = useState('')
-  // const [updatedTitle, setUpdatedTitle] = useState('')
-  // const [updatedDev, setUpdatedDev] = useState('')
-  // const [updatedPub, setUpdatedPub] = useState('')
-  // const [updatedGenre, setUpdatedGenre] = useState('')
-
-  // const handleUpdateImg = (g) => {
-  //   setUpdatedImage(g.target.value)
-  // }
-  // const handleUpdateTitle = (g) => {
-  //   setUpdatedTitle(g.target.value)
-  // }
-  // const handleUpdateDev = (g) => {
-  //   setUpdatedDev(g.target.value)
-  // }
-  // const handleUpdatePub = (g) => {
-  //   setUpdatedPub(g.target.value)
-  // }
-  // const handleUpdateGenre = (g) => {
-  //   setUpdatedGenre(g.target.value)
-  // }
-
- 
-
-
-          // handleUpdateDev={handleUpdateDev}
-            // handleUpdateGenre={handleUpdateGenre}
-            // handleUpdateImg={handleUpdateImg}
-            // handleUpdatePub={handleUpdatePub}
