@@ -32,7 +32,7 @@ const Index = (params) => {
                 {params.games.map((game)=>{ 
                     return(
                         <Col>
-                            <Games game ={params.game} key={game._id} title={game.title} creator={game.creator} image={game.image} studio={game.studio} genre={game.genre}/> 
+                            <Games game ={params.game} key={game._id} title={game.title} developer={game.developer} image={game.image} publisher={game.publisher} genre={game.genre}/> 
                         </Col>  )})} 
             </Row>
         </main>

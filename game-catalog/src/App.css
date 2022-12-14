@@ -56,19 +56,25 @@ th {
 
 td {
   border: 1px solid black;
-color: black;
+  color: black;
 }
 
-/* form {
+form {
   display: flex;
   gap: 5px;
-} */
-
-form td:last-child {
-  display: flex;
-  justify-content: space-evenly;
 }
 
-/* form * {
-  font-size: 28px;
+/* form td:last-child {
+  display: flex;
+  justify-content: space-evenly;
 } */
+
+ /* form * {
+  font-size: 28px;
+}  */
+
+.table-image {
+height: 150px;
+width: 125px;
+object-fit: contain;
+}
