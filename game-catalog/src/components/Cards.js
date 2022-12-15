@@ -17,5 +17,4 @@ const Cards = (props) => {
             <Delete game={props.game}/>
     </Card>
 )}
-
 export default Cards;

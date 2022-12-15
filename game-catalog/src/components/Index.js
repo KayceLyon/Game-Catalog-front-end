@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, Fragment} from 'react'
 import axios from 'axios'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
@@ -8,7 +8,7 @@ import Games from './Games'
 
 const Index = (params) => {
   
-  const getGamesDB = (e) =>{
+  const getGamesDB = () =>{
     axios
     .get('http://localhost:3000/games')
     .then((response)=>{
@@ -16,9 +16,9 @@ const Index = (params) => {
       params.setFilteredGames((response.data))
     })
   }
-  
+
   useEffect(()=>{
-    getGamesDB()
+    getGamesDB();
   }, []);
 
   return (
@@ -28,11 +28,18 @@ const Index = (params) => {
                 {params.filteredGames.map((game)=>{ 
                     return(
                         <Col>
-                            <Games game ={params.filteredGames} key={game._id} title={game.title} creator={game.creator} image={game.image} studio={game.studio} genre={game.genre}/>                         </Col>  )})} 
+                            <Games 
+                            game ={params.filteredGames} 
+                            key={game._id} 
+                            title={game.title} 
+                            creator={game.creator} 
+                            image={game.image} 
+                            studio={game.studio} 
+                            genre={game.genre}/>                         
+                          </Col>  )})} 
             </Row>
         </main>
     </div>
-    
   ) 
 }
 

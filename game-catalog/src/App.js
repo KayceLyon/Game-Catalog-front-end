@@ -11,6 +11,7 @@ import Login from './components/Login'
 
 const App = () => {
 
+  const [apiGames, setApiGames] = useState({})
   const [games, setGames] = useState([])
   const [formData, setFormData] = useState({
     title: "",
@@ -32,9 +33,9 @@ const App = () => {
     <>
     <Routes>
       <Route path = "/games" element={<Navigation filteredGames = {filteredGames} setFilteredGames = {setFilteredGames} searchParams = {searchParams} setSearchParams = {setSearchParams} games = {games} setGames = {setGames} />}>
-        <Route index element={<Index filteredGames = {filteredGames} setFilteredGames = {setFilteredGames} games = {games} setGames = {setGames}/>} /> 
+        <Route index element={<Index apiGames={apiGames} setApiGames={setApiGames} filteredGames = {filteredGames} setFilteredGames = {setFilteredGames} games = {games} setGames = {setGames}/>} /> 
         <Route path="new" element={<GameForm formData = {formData} setFormData = {setFormData} setGames = {setGames}/>} />
-        <Route path="edit/:id" element={<EditForm formData = {formData} setFormData = {setFormData} games = {games} setGames = {setGames}/>} />
+        <Route path="edit/:id" element={<EditForm games = {games} setGames = {setGames}/>} />
       </Route>
       <Route path = "/users" element={<Navigation />} >
           <Route path="signup" element={<Signup />} />
