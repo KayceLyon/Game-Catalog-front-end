@@ -1,6 +1,5 @@
 import React, { useState, useEffect, Fragment } from 'react'
 import axios from 'axios'
-import Navigation from './Navigation'
 import Edit from './TableEdit'
 import Read from './TableRead'
 
@@ -76,7 +75,6 @@ useEffect(()=>{
 
     return (
       <div>
-        <Navigation />
           <table>
           <thead>
             <tr>
