@@ -5,10 +5,10 @@ const Delete = (params) => {
 
 const handleDelete = (gameData)=> {
     axios 
-      .delete(`http://localhost:3000/games/${gameData._id}`)
+      .delete(`https://game2play-backend.herokuapp.com/games/${gameData._id}`)
       .then(()=> {
         axios 
-          .get('http://localhost:3000/games')
+          .get('https://game2play-backend.herokuapp.com/games')
           .then((response)=> {
             params.setGames(response.data)
           })

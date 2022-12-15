@@ -1,6 +1,5 @@
 import React, { useState, useEffect, Fragment } from 'react'
 import axios from 'axios'
-import Navigation from './Navigation'
 import Edit from './TableEdit'
 import Read from './TableRead'
 
@@ -31,7 +30,7 @@ const EditForm = (props) => {
   const handleEditSubmit= (g)=> {
         axios 
           .put(
-            `http://localhost:3000/games/${g._id}`,
+            `https://game2play-backend.herokuapp.com/games/${g._id}`,
             {
             title: updatedTitle,
             developer: updatedDev,
@@ -41,7 +40,7 @@ const EditForm = (props) => {
             }
           ).then(()=> {
             axios 
-              .get('http://localhost:3000/games')
+              .get('https://game2play-backend.herokuapp.com/games')
               .then((response)=> {
                 props.setGames(response.data)
               })
@@ -57,10 +56,10 @@ const EditForm = (props) => {
       }
       const handleDelete = (g) => {
           axios 
-          .delete(`http://localhost:3000/games/${g._id}`)
+          .delete(`https://game2play-backend.herokuapp.com/games/${g._id}`)
           .then(()=> {
             axios 
-              .get('http://localhost:3000/games')
+              .get('https://game2play-backend.herokuapp.com/games')
               .then((response)=> {
                props.setGames(response.data)
               })
@@ -69,7 +68,7 @@ const EditForm = (props) => {
 
 useEffect(()=>{
   axios
-    .get('http://localhost:3000/games')
+    .get('https://game2play-backend.herokuapp.com/games')
       .then((response)=>{
           props.setGames(response.data)})
   }, []);
