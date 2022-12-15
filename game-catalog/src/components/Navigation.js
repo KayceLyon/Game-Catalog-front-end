@@ -1,19 +1,18 @@
 import React from 'react'
-// import Button from 'react-bootstrap/Button';
+import {Link, Outlet} from 'react-router-dom'
 import Container from 'react-bootstrap/Container';
-// import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 import Search from './Search'
 
-const Navigation = () => {
+const Navigation = (params) => {
     return (
         <>
         <Navbar bg="light" expand="lg">
       <Container fluid>
-        <Navbar.Brand href="#">Game2Play</Navbar.Brand>
+        <Navbar.Brand as={Link} to={"/games"}>Game2Play</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -21,11 +20,12 @@ const Navigation = () => {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#">Home</Nav.Link>
-            <Nav.Link href="#Index">Games</Nav.Link>
+            <Nav.Link as={Link} to={"/users/signup"}>Sign-Up</Nav.Link>
+            <NavDropdown title="Profile" id="navbarScrollingDropdown">
+            </NavDropdown>
             <NavDropdown title="Forms" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Add Games</NavDropdown.Item>
-              <NavDropdown.Item href="#Edit">
+              <NavDropdown.Item as={Link} to={"/games/new"}>Add Games</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to={"/games/edit/:id"}>
                 Edit Games
               </NavDropdown.Item>
             </NavDropdown>
@@ -33,10 +33,11 @@ const Navigation = () => {
               GG
             </Nav.Link>
           </Nav>
-            <Search />
+            <Search games = {params.games} setGames = {params.setGames} searchParams = {params.searchParams} setSearchParams = {params.setSearchParams} filteredGames = {params.filteredGames} setFilteredGames = {params.setFilteredGames} />
         </Navbar.Collapse>
       </Container>
     </Navbar>
+    <Outlet />
         </>
     )
 }

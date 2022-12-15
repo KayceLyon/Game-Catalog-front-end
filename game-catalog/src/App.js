@@ -1,66 +1,51 @@
-import React, {useState, useEffect} from 'react'
-import axios from 'axios'
-import Col from 'react-bootstrap/Col'
-import Row from 'react-bootstrap/Row'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css'
+import {Route, Routes, Navigate, useSearchParams} from 'react-router-dom'
+import GameForm from './components/GameForm'
 
-import GameForm from "./components/GameForm"
-import Navigation from "./components/Navigation"
-import Index from "./components/Index"
-import EditForm from "./components/EditForm"
-// import Cards from './components/Cards'
+import React, {useState} from 'react'
+
+import Index from './components/Index'
+import EditForm from './components/EditForm'
+import Navigation from './components/Navigation'
+import Signup from './components/Signup'
+import Login from './components/Login'
 
 const App = () => {
 
   const [games, setGames] = useState([])
-  const [newTitle, setNewTitle] = useState('')
-  const [newCreator, setNewCreator] = useState('')
-  const [newStudio, setNewStudio] = useState('')
-  const [newGenre, setNewGenre] = useState('')
-  const [newImage, setNewImage] = useState('')
-
-  const getGamesDB = (e) =>{
-    axios
-    .get('http://localhost:3000/games')
-    .then((response)=>{
-      setGames(response.data)
-    })
-  }
-  
-  useEffect(()=>{
-    getGamesDB()
-  }, []);
-
+  const [formData, setFormData] = useState({
+    title: "",
+    developer: "",
+    publisher: "",
+    genre: "",
+    image: "",
+    completed: false,
+  })
+  const [searchParams, setSearchParams] = useSearchParams({query: ""})
+  const [filteredGames, setFilteredGames] = useState([])
+  const [user, setUser] = useState({
+    username: "",
+    password: "",
+    email: ""
+  })
 
   return (
-    <div className='container'>
-        <main className="form-div" id="Game">
-          <Navigation />
-      </main>
-      <section >
-      <main id="Create" className='create-section'>
-        <GameForm newTitle={newTitle} newCreator={newCreator} 
-          newImage={newImage} newStudio={newStudio} newGenre={newGenre} 
-          setGames={setGames} setNewTitle={setNewTitle} setNewCreator={setNewCreator} 
-          setNewStudio={setNewStudio} setNewGenre={setNewGenre} setNewImage={setNewImage} />
-        </main>
-        </section>
-        <main id="Index" className='index-section'>
-    <Row xs={1} md={4} className="g-4">
-            {games.map((game)=>{ 
-              return(
-            <Col>
-            <Index key={game._id} title={game.title} creator={game.creator} image={game.image} studio={game.studio} genre={game.genre}/> 
-              </Col>  )})} 
-      </Row>
-         </main>
-        <main id="Edit" className='edit-section' >
-          <EditForm />
-        </main>
-  </div>
+    <>
+    <Routes>
+      <Route path = "/games" element={<Navigation filteredGames = {filteredGames} setFilteredGames = {setFilteredGames} searchParams = {searchParams} setSearchParams = {setSearchParams} games = {games} setGames = {setGames} />}>
+        <Route index element={<Index filteredGames = {filteredGames} setFilteredGames = {setFilteredGames} games = {games} setGames = {setGames}/>} /> 
+        <Route path="new" element={<GameForm formData = {formData} setFormData = {setFormData} setGames = {setGames}/>} />
+        <Route path="edit/:id" element={<EditForm formData = {formData} setFormData = {setFormData} games = {games} setGames = {setGames}/>} />
+      </Route>
+      <Route path = "/users" element={<Navigation />} >
+          <Route path="signup" element={<Signup />} />
+          <Route path="login" element={<Login />} />
+x      </Route>
+      <Route path="/" element={<Navigate to="/games" />} />
+
+    </Routes>
     
-  )
+    </>    
+  ) 
 }
 
 export default App
