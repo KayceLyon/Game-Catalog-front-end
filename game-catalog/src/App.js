@@ -1,6 +1,7 @@
 import {Route, Routes, Navigate, useSearchParams} from 'react-router-dom'
 import GameForm from './components/GameForm'
-import React, {useState, useEffect} from 'react'
+
+import React, {useState} from 'react'
 
 import Index from './components/Index'
 import EditForm from './components/EditForm'
@@ -14,7 +15,7 @@ const App = () => {
   const [formData, setFormData] = useState({
     title: "",
     developer: "",
-    studio: "",
+    publisher: "",
     genre: "",
     image: "",
     completed: false,
