@@ -11,8 +11,8 @@ const Cards = (props) => {
                     <Card.Title>{props.title}</Card.Title>
                     <Card.Text> 
                                 {props.genre} 
-                                {props.creator} 
-                                {props.studios} </Card.Text>
+                                {props.developer} 
+                                {props.publisher} </Card.Text>
             {/* </Card.ImgOverlay> */}
             <Delete game={props.game}/>
     </Card>
