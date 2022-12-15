@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useEffect} from 'react'
 import axios from 'axios'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'

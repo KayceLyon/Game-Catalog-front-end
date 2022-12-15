@@ -29,7 +29,7 @@ const Search = (params) => {
                 onChange={(event) => params.setSearchParams({query: event.target.value})}
                 onClick={(event) => params.setFilteredGames(params.games)}
                 />
-                <Button onClick={filterGamesDB} variant="outline-success">Search</Button>
+                <Button onClick={filterGamesDB} variant="outline-dark">Search</Button>
           </Form>
         </>
     )
