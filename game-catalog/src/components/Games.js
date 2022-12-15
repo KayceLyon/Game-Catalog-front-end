@@ -8,9 +8,9 @@ const Games = (props) => {
             <Cards 
             key={props._id} 
             title={props.title} 
-            developer={props.creator} 
+            developer={props.developer} 
             image={props.image} 
-            publisher={props.studio} 
+            publisher={props.publisher} 
             genre={props.genre} 
             game={props.game}
             />
