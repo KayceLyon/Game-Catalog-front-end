@@ -28,7 +28,7 @@ const Index = (params) => {
                 {params.filteredGames.map((game)=>{ 
                     return(
                         <Col>
-                            <Games game ={params.filteredGames} key={game._id} title={game.title} creator={game.developer} image={game.image} studio={game.publisher} genre={game.genre}/>                         </Col>  )})} 
+                            <Games game ={params.filteredGames} key={game._id} title={game.title} developer={game.developer} image={game.image} publisher={game.publisher} genre={game.genre}/>                         </Col>  )})} 
             </Row>
         </main>
     </div>
