@@ -7,18 +7,25 @@ import '../App.css'
 import Games from './Games'
 
 const Index = (params) => {
-  
+//   const axiosRequest = [ 
+//     'http://localhost:3000/games',
+//     'https://api.rawg.io/api/platforms?key=7cb5d75256734799809d62c8e0796218'
+//   ]
+ 
+//  const getAllGames = () => { 
+//   Promise.all(axiosRequest.map(()))
+//  }
   const getGamesDB = () =>{
-    axios
-    .get('http://localhost:3000/games')
+    axios.get('http://localhost:3000/games')
     .then((response)=>{
-      params.setGames(response.data)
+      params.setGames(response.data);
       params.setFilteredGames((response.data))
     })
   }
 
   useEffect(()=>{
     getGamesDB();
+    // getAllGames()
   }, []);
 
   return (
@@ -32,9 +39,9 @@ const Index = (params) => {
                             game ={params.filteredGames} 
                             key={game._id} 
                             title={game.title} 
-                            creator={game.creator} 
+                            developer={game.developer} 
                             image={game.image} 
-                            studio={game.studio} 
+                            publisher={game.publisher} 
                             genre={game.genre}/>                         
                           </Col>  )})} 
             </Row>
