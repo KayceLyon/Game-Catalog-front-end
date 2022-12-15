@@ -10,7 +10,7 @@ const Index = (params) => {
   
   const getGamesDB = (e) =>{
     axios
-    .get('http://localhost:3000/games')
+    .get('https://game2play-backend.herokuapp.com/games')
     .then((response)=>{
       params.setGames(response.data)
       params.setFilteredGames((response.data))

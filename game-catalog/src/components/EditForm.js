@@ -13,7 +13,7 @@ const EditForm = (params) => {
     const handleEdit = (gameData)=> {
         axios 
           .put(
-            `http://localhost:3000/games/edit/${gameData._id}`,
+            `https://game2play-backend.herokuapp.com/games/edit/${gameData._id}`,
             {
                 title: params.formData.title,
                 developer: params.formData.creator,
@@ -23,7 +23,7 @@ const EditForm = (params) => {
             }
           ).then(()=> {
             axios 
-              .get('http://localhost:3000/games')
+              .get('https://game2play-backend.herokuapp.com/games')
               .then((response)=> {
                 params.setGames(response.data)
               })

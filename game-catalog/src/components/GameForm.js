@@ -15,7 +15,7 @@ const GameForm = (props) => {
   const handleNewGame = (g) => {
     g.preventDefault()
     axios.post(
-      'http://localhost:3000/games',
+      'https://game2play-backend.herokuapp.com/games',
       {
         title: props.formData.title,
         developer: props.formData.developer,
@@ -24,7 +24,7 @@ const GameForm = (props) => {
         image: props.formData.image,
       }).then(()=>{
         axios
-        .get('http://localhost:3000/games')
+        .get('https://game2play-backend.herokuapp.com/games')
         .then((response)=>{
           props.setGames(response.data)
         })
