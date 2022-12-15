@@ -1,24 +1,21 @@
 import React from 'react'
-import Card from 'react-bootstrap/Card';
+import Card from 'react-bootstrap/Card'
+import Delete from './Delete'
 
+const Cards = (props) => {
 
-const Cards = () => {
-    return (
-        <>
-            <Card className="bg-dark text-white">
-                <Card.Img src="holder.js/100px270" alt="Card image" />
-                <Card.ImgOverlay>
-                    <Card.Title>Card title</Card.Title>
-                    <Card.Text>
-                    This is a wider card with supporting text below as a natural lead-in
-                    to additional content. This content is a little bit longer.
-                    </Card.Text>
-                    <Card.Text>Last updated 3 mins ago</Card.Text>
-            </Card.ImgOverlay>
+  return (
+     <Card className="bg-dark text-white game-cards" key={props._id}>
+                <Card.Img src={props.image} className="card-img" alt="Card image" />
+                {/* <Card.ImgOverlay> */}
+                    <Card.Title>{props.title}</Card.Title>
+                    <Card.Text> 
+                                {props.genre} 
+                                {props.developer} 
+                                {props.publisher} </Card.Text>
+            {/* </Card.ImgOverlay> */}
+            <Delete game={props.game}/>
     </Card>
-        
-        </>
-    )
-}
+)}
 
-export default Cards
+export default Cards;

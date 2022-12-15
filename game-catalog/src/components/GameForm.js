@@ -1,40 +1,27 @@
 import React from 'react'
 import axios from 'axios'
-
+import Navigation from './Navigation'
 
 const GameForm = (props) => {
 
-
-  const handleNewTitle = (game) => {
-    props.setNewTitle(game.target.value)
-  }
-
-  const handleNewCreator = (game) => {
-    props.setNewCreator(game.target.value)
-  }
-
-  const handleNewStudio = (game) => {
-    props.setNewStudio(game.target.value)
-  }
-
-  const handleNewGenre = (game) => {
-    props.setNewGenre(game.target.value)
-  }
-
-  const handleNewImage = (game) => {
-    props.setNewImage(game.target.value)
-  }
+    const handleChange = (event)=> {
+        const {name, value, type, checked} = event.target
+        props.setFormData(prevFormData => ({
+            ...prevFormData,
+            [name]: type === "checkbox" ? checked: value
+        })) 
+    }
   
   const handleNewGame = (g) => {
     g.preventDefault()
     axios.post(
       'http://localhost:3000/games',
       {
-        title:props.newTitle,
-        creator:props.newCreator,
-        studio:props.newStudio,
-        genre:props.newGenre,
-        image:props.newImage,
+        title: props.formData.title,
+        developer: props.formData.developer,
+        publisher: props.formData.publisher,
+        genre: props.formData.genre,
+        image: props.formData.image,
       }).then(()=>{
         axios
         .get('http://localhost:3000/games')
@@ -46,14 +33,18 @@ const GameForm = (props) => {
 
 
     return (
+      <div>
+          <Navigation />
+      <h1>Insert Game Information!</h1>
         <form className='form-group' onSubmit={handleNewGame}>
-          <input class="form-control origin" type='text' name='image' onChange={handleNewImage} placeholder="Image URL" /><br/>
-          <input class="form-control origin" type='text' name='title' onChange={handleNewTitle} placeholder="Title of Game"/><br/>
-          <input class="form-control origin" type='text' name='creator' onChange={handleNewCreator} placeholder="Game Creator"/><br/>
-          <input class="form-control origin" type='text' name='genre' onChange={handleNewGenre} placeholder="Game Genre"/><br/>
-          <input class="form-control origin" type='text' name='studio' onChange={handleNewStudio} placeholder="Design Studios"/><br/>
-          <input type='submit' value="Add Game" />
+          <input className="form-control origin" type='text' name='image' onChange={handleChange} placeholder="Image URL" value={props.formData.image} /><br/>
+          <input className="form-control origin" type='text' name='title' onChange={handleChange} placeholder="Title" value={props.formData.title}/><br/>
+          <input className="form-control origin" type='text' name='developer' onChange={handleChange} placeholder="Developer(s)" value={props.formData.developer}/><br/>
+          <input className="form-control origin" type='text' name='genre' onChange={handleChange} placeholder="Genre(s)" value={props.formData.genre}/><br/>
+          <input className="form-control origin" type='text' name='publisher' onChange={handleChange} placeholder="Publisher(s)" value={props.formData.publisher}/><br/>
+          <button><input type='submit' value="Add Game" /></button>
         </form>
+      </div>
     )
 }
 
