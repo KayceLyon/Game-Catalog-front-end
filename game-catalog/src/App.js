@@ -11,7 +11,8 @@ import Navigation from './components/Navigation'
 import Profile from './components/Profile';
 
 const App = () => {
-
+  
+  const [apiGames, setApiGames] = useState([])
   const [games, setGames] = useState([])
   const [formData, setFormData] = useState({
     title: "",
@@ -29,14 +30,12 @@ const App = () => {
   return (
     <>
     <Routes>
-      <Route path = "/games" element={<Navigation user = {user} isAuthenticated = {isAuthenticated} filteredGames = {filteredGames} setFilteredGames = {setFilteredGames} searchParams = {searchParams} setSearchParams = {setSearchParams} games = {games} setGames = {setGames} > </Navigation>}>
-        <Route index element={<Index filteredGames = {filteredGames} setFilteredGames = {setFilteredGames} games = {games} setGames = {setGames}/>} /> 
+      <Route path = "/games" element={<Navigation filteredGames = {filteredGames} setFilteredGames = {setFilteredGames} searchParams = {searchParams} setSearchParams = {setSearchParams} games = {games} setGames = {setGames} />}>
+        <Route index element={<Index apiGames={apiGames} setApiGames={setApiGames} filteredGames = {filteredGames} setFilteredGames = {setFilteredGames} games = {games} setGames = {setGames}/>} /> 
         <Route path="new" element={<GameForm formData = {formData} setFormData = {setFormData} setGames = {setGames}/>} />
-        <Route path="edit/:id" element={<EditForm formData = {formData} setFormData = {setFormData} games = {games} setGames = {setGames}/>} />
-        <Route path= "/profile" element={<Profile />} />
+        <Route path="edit/:id" element={<EditForm games = {games} setGames = {setGames}/>} />
       </Route>
       <Route path="/" element={<Navigate to="/games" />} />
-
     </Routes>
     
     </>    

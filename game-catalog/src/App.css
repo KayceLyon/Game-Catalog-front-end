@@ -1,84 +1,112 @@
 html {
-  scroll-behavior: smooth;
+scroll-behavior: smooth;
 }
 
-.create-section {
-  margin-top: 150px;
-  margin-bottom: 150px;
-  height: 25vh;
+body {
+background-color: #390D02;
+color: white;
+box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255),
+0.3em 0.3em 1em rgba(0, 0, 0, 0.3)
 }
 
-.edit-section {
-  height: 25vh;
-  margin-top: 150px;
-  margin-bottom: 150px;
+.mb-3{
+color: #390D02;
+background-color: white;
+box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255),
+0.3em 0.3em 1em rgba(0, 0, 0, 0.3)
 }
-.index-section {
-  height: fit-content;
-  margin-bottom: 150px;
-  margin-top: 150px;
+
+.navbarhome{
+color:#390D02;
+}
+
+.hamhamham:hover {
+color: #520120;
+border-color: #520120;
+background-color: #DBDAD9;
+}
+
+.offcanvas-link{
+text-decoration: none;
+color: black;
+font-size: 25px;
+}
+
+.offcanvas-header{
+box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.05), 0 0 0 2px rgb(255, 255, 255),
+0.3em 0.3em 1em rgba(0, 0, 0, 0.1)
+
+}
+.offcanvas-body {
+color: black;
+}
+.offcanvas-body:hover{
+color: #5C1A17; 
 }
 .game-cards{
-height: 350px;
-object-fit: contain;
-}
 
+height: 100%;
+
+object-fit: contain;
+background-color: white;
+color: #390D02 ;
+padding: 20px;
+box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.2), 0 0 0 2px rgb(255, 255, 255),
+  0.3em 0.3em 1em rgba(0, 0, 0, 0.2)
+}
 .card-img{
-  height: 50%;
-  width: 100%;  
-  object-fit:contain;
-  background-color: white;
+height:175px;
+object-fit:contain;
+box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255),
+0.3em 0.3em 1em rgba(0, 0, 0, 0.1)
 } 
 
-.card-title {
-  text-align: center;
-}
+/* .container {
+display: flex;
+flex-direction: column;
+gap: 10px;
+padding: 1rem;
+} */
 
-.container {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 1rem;
-}
 
 table {
-  border-collapse: collapse;
-  width: 100%;
+border: solid black;
 }
 
 th,
 td {
-  border: 1px solid #ffffff;
-  text-align: left;
-  padding: 8px;
+border: 1px solid black;
+text-align: left;
+padding: 8px;
 }
 
 th {
-  background-color: rgb(17, 21, 25);
-  color: white;
+background-color: rgb(17, 21, 25);
+color: Black;
 }
 
 td {
-  border: 1px solid black;
-  color: black;
+border: 1px solid black;
+color: black;
 }
-
-form {
-  display: flex;
-  gap: 5px;
-}
-
-/* form td:last-child {
-  display: flex;
-  justify-content: space-evenly;
-} */
-
- /* form * {
-  font-size: 28px;
-}  */
 
 .table-image {
-height: 150px;
+height: 100%;
 width: 125px;
 object-fit: contain;
+}
+
+.edit-form {
+width: 100%;
+background-color: white;
+}
+
+.add-section  {
+margin-top: 50px;
+background-color: white;
+color: white;
+}
+
+.add-h1 {
+color: white;
 }

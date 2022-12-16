@@ -1,4 +1,5 @@
 import React from "react";
+import Button from 'react-bootstrap/Button'
 
 const Edit = ({ game , handleEditSubmit, handleCancelClick, handleUpdateImg, handleUpdateTitle, handleUpdateDev, handleUpdatePub, handleUpdateGenre }) => {
 return (
@@ -48,10 +49,10 @@ return (
             key={game._id}
             ></input></td>
         <td>
-        <button type="submit" onClick={() => {handleEditSubmit(game)}}> Save </button>
-        <button type="button" onClick={handleCancelClick}>
+        <Button variant="outline-success btn-sm" type="submit" onClick={() => {handleEditSubmit(game)}}> Save </Button>
+        <Button variant="outline-dark btn-sm" type="button" onClick={handleCancelClick}>
           Return
-        </button>
+        </Button>
       </td>
     </tr>
 )
