@@ -12,7 +12,7 @@ const Navigation = (params) => {
         <>
         <Navbar bg="light" expand="lg">
       <Container fluid>
-        <Navbar.Brand as={Link} to={"/games"}>Game2Play</Navbar.Brand>
+        <Navbar.Brand as={Link} to={"/games"}>Games2Play</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
