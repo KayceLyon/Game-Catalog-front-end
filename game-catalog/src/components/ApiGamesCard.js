@@ -1,14 +1,21 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card'
 import Carousel from 'react-bootstrap/Carousel'
+import CardImg from 'react-bootstrap/esm/CardImg'
 
 const ApiGameCard = (props) => {
+
   return (
-     <Card className="game-cards" key={props._id}>
-                   <Carousel>
-                   <Carousel.Item >
-                    <Card.Img key={props.short_screenshots.id} src={props.short_screenshots.image}  className="card-img" alt="Card image" />
-                    </Carousel.Item>
+     <Card className="bg-dark text-white game-cards" key={props.id}>
+                            <Carousel>
+                    
+                    {props.short_screenshots.map((image) =>{
+                        return(
+                   <Carousel.Item>
+                <CardImg  key={image.id} src={image.image}  className="card-img" alt="Card image" />
+                </Carousel.Item>
+                        )
+                })}
                 </Carousel>
                 {/* <Card.ImgOverlay> */}
                     <Card.Title>{props.name}</Card.Title>

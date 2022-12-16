@@ -9,6 +9,9 @@ background-color: white;
   color: black;
   font-size: 25px;
 }
+.offcanvas-link:hover {
+  color:#7D1700;
+}
 /* .create-section {
   margin-top: 150px;
   margin-bottom: 150px;

@@ -10,7 +10,7 @@ import Signup from './components/Signup'
 import Login from './components/Login'
 
 const App = () => {
-
+  
   const [apiGames, setApiGames] = useState([])
   const [games, setGames] = useState([])
   const [formData, setFormData] = useState({

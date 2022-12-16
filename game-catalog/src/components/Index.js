@@ -60,22 +60,22 @@ const Index = (params) => {
           <h1>Third Party API Games</h1>
         <Row xs={1} md={4} className="g-4">
         {params.apiGames.map((game) => {
-                    for(let i=0; i < game.short_screenshots.length; i++){
-                      
-                    console.log(game.short_screenshots[i]);
+                    // for(let i=0; i < game.short_screenshots.length; i++){
+                    // console.count(game.short_screenshots.image);
+                    // }
+                    console.log(game.short_screenshots);
                   return(
                     <Col key={game.id}>
-                      <ApiGames 
-                      short_screenshots={game.short_screenshots[i]}
+                      <ApiGames
+                      key={game.id}
+                      short_screenshots={game.short_screenshots}
                       name={game.name}
                       genres={game.genres[0].name} 
                       released={game.released}
                       rating={game.rating}
                       />
                   </Col>
-
-                    
-                  )}})}
+                )})}
             </Row>
 </main>
     </div>

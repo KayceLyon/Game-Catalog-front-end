@@ -6,7 +6,7 @@ const ApiGames = (props) => {
     return (
         <>
             <ApiGamesCard 
-            key={props._id} 
+            key={props.id}
             short_screenshots={props.short_screenshots}
             name={props.name}
             genres={props.genres} 
