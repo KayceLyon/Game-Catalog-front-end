@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import Card from 'react-bootstrap/Card'
 import Carousel from 'react-bootstrap/Carousel'
 import CardImg from 'react-bootstrap/esm/CardImg'
