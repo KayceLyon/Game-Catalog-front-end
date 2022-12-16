@@ -21,6 +21,7 @@ const Navigation = (params) => {
             navbarScroll
           >
             <Nav.Link as={Link} to={"/users/signup"}>Sign-Up</Nav.Link>
+            <Nav.Link as={Link} to={"/users/login"}>Login</Nav.Link>
             <NavDropdown title="Profile" id="navbarScrollingDropdown">
             </NavDropdown>
             <NavDropdown title="Forms" id="navbarScrollingDropdown">
