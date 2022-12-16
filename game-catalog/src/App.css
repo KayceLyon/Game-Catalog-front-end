@@ -28,19 +28,24 @@ background-color: white;
   margin-bottom: 150px;
   margin-top: 150px;
 } */
-.game-cards{
-height: 300px;
-object-fit: contain;
-background-color: white;
+.create-game-cards{
+  object-fit: contain;
+  background-color: white;
 }
-
-.card-img{
-  height: 50%;
-  width: 100%;  
+.create-card-img{
+  height:250px;
   object-fit:contain;
   background-color: black;
 } 
-
+.game-card{
+  height: 100%;
+  object-fit: contain;
+  background-color: white;
+}
+.card-img{
+  object-fit:contain;
+  background-color: black;
+} 
 .container {
   display: flex;
   flex-direction: column;
