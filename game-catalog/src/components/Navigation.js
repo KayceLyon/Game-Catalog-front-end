@@ -24,12 +24,15 @@ const Navigation = (params) => {
             >
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title as={Link} to={"/games"} className={'offcanvas-link'} id={`offcanvasNavbarLabel-expand-${expand}`}>
-                  Game2Play
+                  Games2Play
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
+                <Nav className="justify-content-start flex-grow-1 pe 3">
+                <Nav.Link><LoginButton /></Nav.Link>
+                <Nav.Link><LogoutButton /></Nav.Link>
+                </Nav>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-    <Nav.Link as={Link} to={"/users/signup"}>Sign-Up</Nav.Link>
              <Nav.Link as={Link} to={"/games/new"}>Add Games</Nav.Link>
             <Nav.Link as={Link} to={"/games/edit/:id"}>
                 Edit Games</Nav.Link>
