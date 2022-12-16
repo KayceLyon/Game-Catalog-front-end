@@ -6,6 +6,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
 import Search from './Search'
+import LoginButton from './LoginButton';
+import LogoutButton from './LogoutButton';
 
 const Navigation = (params) => {
   return (

@@ -71,3 +71,4 @@ const Index = (params) => {
 }
 
 export default Index
+

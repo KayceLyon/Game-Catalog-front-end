@@ -1,6 +1,5 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card'
-import Delete from './Delete'
 
 const Cards = (props) => {
 
@@ -13,6 +12,7 @@ const Cards = (props) => {
                                 Developers: {props.developer}<br/> 
                                 Publishers: {props.publisher} 
                     </Card.Text>
+
     </Card>
 )}
 export default Cards;

@@ -11,7 +11,7 @@ const Search = (params) => {
 
     const filterGamesDB = (e) =>{
         axios
-        .get('http://localhost:3000/games')
+        .get('https://game2play-backend.herokuapp.com/games')
         .then((response)=>{
           params.setFilteredGames(filteredGames(response.data, params.searchParams.get("query")))
           
@@ -29,7 +29,7 @@ const Search = (params) => {
                 onChange={(event) => params.setSearchParams({query: event.target.value})}
                 onClick={(event) => params.setFilteredGames(params.games)}
                 />
-                <Button onClick={filterGamesDB} variant="outline-success">Search</Button>
+                <Button onClick={filterGamesDB} variant="outline-dark">Search</Button>
           </Form>
         </>
     )

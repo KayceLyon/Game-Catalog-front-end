@@ -1,13 +1,14 @@
-import {Route, Routes, Navigate, useSearchParams} from 'react-router-dom'
-import GameForm from './components/GameForm'
-
 import React, {useState} from 'react'
+import {Route, Routes, Navigate, useSearchParams} from 'react-router-dom'
+import { useAuth0 } from "@auth0/auth0-react";
 
+import GameForm from './components/GameForm'
 import Index from './components/Index'
 import EditForm from './components/EditForm'
 import Navigation from './components/Navigation'
-import Signup from './components/Signup'
-import Login from './components/Login'
+// import LoginButton from './components/LoginButton'
+// import LogoutButton from './components/LogoutButton';
+import Profile from './components/Profile';
 
 const App = () => {
   
@@ -23,11 +24,8 @@ const App = () => {
   })
   const [searchParams, setSearchParams] = useSearchParams({query: ""})
   const [filteredGames, setFilteredGames] = useState([])
-  const [user, setUser] = useState({
-    username: "",
-    password: "",
-    email: ""
-  })
+  const { user, isAuthenticated, isLoading } = useAuth0();
+
 
   return (
     <>
@@ -37,12 +35,7 @@ const App = () => {
         <Route path="new" element={<GameForm formData = {formData} setFormData = {setFormData} setGames = {setGames}/>} />
         <Route path="edit/:id" element={<EditForm games = {games} setGames = {setGames}/>} />
       </Route>
-      <Route path = "/users" element={<Navigation />} >
-          <Route path="signup" element={<Signup />} />
-          <Route path="login" element={<Login />} />
-x      </Route>
       <Route path="/" element={<Navigate to="/games" />} />
-
     </Routes>
     
     </>    

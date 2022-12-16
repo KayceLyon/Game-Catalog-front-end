@@ -14,7 +14,6 @@ const Games = (props) => {
             genre={props.genre} 
             game={props.game}
             />
-
         </>
     )
 }
