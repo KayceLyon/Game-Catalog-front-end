@@ -6,6 +6,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 import Search from './Search'
+import LoginButton from './LoginButton';
+import LogoutButton from './LogoutButton';
 
 const Navigation = (params) => {
     return (
@@ -20,8 +22,6 @@ const Navigation = (params) => {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link as={Link} to={"/users/signup"}>Sign-Up</Nav.Link>
-            <Nav.Link as={Link} to={"/users/login"}>Login</Nav.Link>
             <NavDropdown title="Profile" id="navbarScrollingDropdown">
             </NavDropdown>
             <NavDropdown title="Forms" id="navbarScrollingDropdown">
