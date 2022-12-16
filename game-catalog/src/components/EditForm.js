@@ -3,6 +3,7 @@ import axios from 'axios'
 import Edit from './TableEdit'
 import Read from './TableRead'
 import Table from 'react-bootstrap/Table'
+import Container from 'react-bootstrap/Container';
 
 const EditForm = (props) => {
 
@@ -75,7 +76,7 @@ useEffect(()=>{
   }, []);
   
     return (
-      <div className='edit-section'>
+<Container className="edit-form"fluid>
           <Table responsive>
           <thead>
             <tr>
@@ -113,7 +114,7 @@ useEffect(()=>{
           ))}
                 </tbody>
             </Table>
-        </div>
+            </Container>
     )
 }
 

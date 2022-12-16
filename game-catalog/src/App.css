@@ -1,123 +1,108 @@
 html {
-  scroll-behavior: smooth;
+scroll-behavior: smooth;
 }
+
 body {
 background-color: #390D02;
 color: white;
 box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255),
 0.3em 0.3em 1em rgba(0, 0, 0, 0.3)
 }
+
 .mb-3{
-  color: #390D02;
-  background-color: white;
-  box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255),
-  0.3em 0.3em 1em rgba(0, 0, 0, 0.3)
+color: #390D02;
+background-color: white;
+box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255),
+0.3em 0.3em 1em rgba(0, 0, 0, 0.3)
 }
+
 .navbarhome{
-  color:#390D02;
+color:#390D02;
 }
 
 .hamhamham:hover {
- color: #520120;
- border-color: #520120;
- background-color: #DBDAD9;
+color: #520120;
+border-color: #520120;
+background-color: #DBDAD9;
 }
+
 .offcanvas-link{
-  text-decoration: none;
-  color: black;
-  font-size: 25px;
+text-decoration: none;
+color: black;
+font-size: 25px;
 }
-  .offcanvas-header{
-  box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.05), 0 0 0 2px rgb(255, 255, 255),
-  0.3em 0.3em 1em rgba(0, 0, 0, 0.1)
+
+.offcanvas-header{
+box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.05), 0 0 0 2px rgb(255, 255, 255),
+0.3em 0.3em 1em rgba(0, 0, 0, 0.1)
 
 }
 .offcanvas-body {
-  color: black;
+color: black;
 }
 .offcanvas-body:hover{
-  color: #5C1A17; 
+color: #5C1A17; 
 }
-/* 
-.index-section {
-  height: fit-content;
-  margin-bottom: 150px;
-  margin-top: 150px;
-} */
 .game-cards{
-  height: 100%;
-  object-fit: contain;
-  background-color: white;
-  color: #390D02 ;
-  padding: 20px;
-  box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.2), 0 0 0 2px rgb(255, 255, 255),
-    0.3em 0.3em 1em rgba(0, 0, 0, 0.2)
+height: 100%;
+object-fit: contain;
+background-color: white;
+color: #390D02 ;
+padding: 20px;
+box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.2), 0 0 0 2px rgb(255, 255, 255),
+  0.3em 0.3em 1em rgba(0, 0, 0, 0.2)
 }
 .card-img{
-  height:175px;
-  object-fit:contain;
-  box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255),
-  0.3em 0.3em 1em rgba(0, 0, 0, 0.1)
+height:175px;
+object-fit:contain;
+box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255),
+0.3em 0.3em 1em rgba(0, 0, 0, 0.1)
 } 
-.container {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 1rem;
-}
+/* .container {
+display: flex;
+flex-direction: column;
+gap: 10px;
+padding: 1rem;
+} */
 
 table {
-  border-collapse: collapse;
-  width: 100%;
-  border: solid black;
+border: solid black;
 }
 
 th,
 td {
-  border: 1px solid black;
-  text-align: left;
-  padding: 8px;
+border: 1px solid black;
+text-align: left;
+padding: 8px;
 }
 
 th {
-  background-color: rgb(17, 21, 25);
-  color: Black;
+background-color: rgb(17, 21, 25);
+color: Black;
 }
 
 td {
-  border: 1px solid black;
-  color: black;
+border: 1px solid black;
+color: black;
 }
-
-/* form {
-  display: flex;
-  gap: 5px;
-} */
-
-/* form td:last-child {
-  display: flex;
-  justify-content: space-evenly;
-} */
-
- /* form * {
-  font-size: 28px;
-}  */
 
 .table-image {
 height: 100%;
 width: 125px;
 object-fit: contain;
 }
-.edit-section {
- background-color: white;
- margin: 15px;
-margin-top: 10%;
+
+.edit-form {
+width: 100%;
+background-color: white;
 }
+
 .add-section  {
-  margin-top: 50px;
-  background-color: white;
-  color: white;
+margin-top: 50px;
+background-color: white;
+color: white;
 }
+
 .add-h1 {
-  color: white;
+color: white;
 }

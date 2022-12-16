@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import Container from 'react-bootstrap/Container';
-
+import Button from 'react-bootstrap/Button'
 const GameForm = (props) => {
 
     const handleChange = (event)=> {
@@ -13,7 +13,6 @@ const GameForm = (props) => {
     }
   
   const handleNewGame = (g) => {
-    g.preventDefault()
     axios.post(
       'http://localhost:3000/games',
       {
@@ -34,15 +33,15 @@ const GameForm = (props) => {
 
     return (
       <Container className='container'fluid>
+        <form>
       <h1 >Insert Game Information!</h1>
-        <form className='form-group' onSubmit={handleNewGame}>
           <input className="form-control origin" type='text' name='image' onChange={handleChange} placeholder="Image URL - preferably 465px by 260px" value={props.formData.image} /><br/>
           <input className="form-control origin" type='text' name='title' onChange={handleChange} placeholder="Title" value={props.formData.title}/><br/>
           <input className="form-control origin" type='text' name='developer' onChange={handleChange} placeholder="Developer(s)" value={props.formData.developer}/><br/>
           <input className="form-control origin" type='text' name='genre' onChange={handleChange} placeholder="Genre(s)" value={props.formData.genre}/><br/>
           <input className="form-control origin" type='text' name='publisher' onChange={handleChange} placeholder="Publisher(s)" value={props.formData.publisher}/><br/>
-          <button><input type='submit' value="Add Game" /></button>
-        </form>
+          <Button variant='light' type='submit' onClick={handleNewGame}>Add Game</Button>
+          </form>
       </Container>
     )
 }

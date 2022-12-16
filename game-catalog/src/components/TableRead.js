@@ -1,4 +1,5 @@
 import React from "react";
+import Button from 'react-bootstrap/Button'
 
 const Read = ({ game, handleEditClick, handleDelete }) => {
   return (
@@ -9,12 +10,12 @@ const Read = ({ game, handleEditClick, handleDelete }) => {
       <td>{game.publisher}</td>
       <td>{game.genre}</td>
       <td>
-        <button type="button" onClick={(event) => handleEditClick(event, game)}>
+        <Button variant="outline-dark btn-sm" onClick={(event) => handleEditClick(event, game)}>
           Edit
-        </button>
-        <button type="button" onClick={() => handleDelete(game)}>
+        </Button>
+        <Button variant="outline-danger btn-sm" onClick={() => handleDelete(game)}>
           Delete
-        </button>
+        </Button>
       </td>
     </tr>
 
