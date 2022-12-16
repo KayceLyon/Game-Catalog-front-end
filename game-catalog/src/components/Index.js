@@ -49,7 +49,7 @@ const Index = (params) => {
             </Row>
         </main>
         <main>
-          <h1>Games</h1>
+          <br></br><h1>Games to Play</h1><br></br>
         <Row xs={1} md={2} lg={3} className="g-4">
         {params.apiGames.map((game) => {
                   return(
