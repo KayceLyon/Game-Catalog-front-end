@@ -2,6 +2,7 @@ import React, { useState, useEffect, Fragment } from 'react'
 import axios from 'axios'
 import Edit from './TableEdit'
 import Read from './TableRead'
+import Table from 'react-bootstrap/Table'
 
 const EditForm = (props) => {
 
@@ -72,10 +73,10 @@ useEffect(()=>{
       .then((response)=>{
           props.setGames(response.data)})
   }, []);
-
+  
     return (
-      <div>
-          <table>
+      <div className='edit-section'>
+          <Table responsive>
           <thead>
             <tr>
               <th>Img url</th>
@@ -111,7 +112,7 @@ useEffect(()=>{
           </Fragment>
           ))}
                 </tbody>
-            </table>
+            </Table>
         </div>
     )
 }

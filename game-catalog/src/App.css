@@ -2,49 +2,62 @@ html {
   scroll-behavior: smooth;
 }
 body {
-background-color: white;
+background-color: #390D02;
+color: white;
+box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255),
+0.3em 0.3em 1em rgba(0, 0, 0, 0.3)
+}
+.mb-3{
+  color: #390D02;
+  background-color: white;
+  box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255),
+  0.3em 0.3em 1em rgba(0, 0, 0, 0.3)
+}
+.navbarhome{
+  color:#390D02;
+}
+
+.hamhamham:hover {
+ color: #520120;
+ border-color: #520120;
+ background-color: #DBDAD9;
 }
 .offcanvas-link{
   text-decoration: none;
   color: black;
   font-size: 25px;
 }
-.offcanvas-link:hover {
-  color:#7D1700;
-}
-/* .create-section {
-  margin-top: 150px;
-  margin-bottom: 150px;
-  height: 25vh;
-}
+  .offcanvas-header{
+  box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.05), 0 0 0 2px rgb(255, 255, 255),
+  0.3em 0.3em 1em rgba(0, 0, 0, 0.1)
 
-.edit-section {
-  height: 25vh;
-  margin-top: 150px;
-  margin-bottom: 150px;
 }
+.offcanvas-body {
+  color: black;
+}
+.offcanvas-body:hover{
+  color: #5C1A17; 
+}
+/* 
 .index-section {
   height: fit-content;
   margin-bottom: 150px;
   margin-top: 150px;
 } */
-.create-game-cards{
-  object-fit: contain;
-  background-color: white;
-}
-.create-card-img{
-  height:250px;
-  object-fit:contain;
-  background-color: black;
-} 
-.game-card{
+.game-cards{
   height: 100%;
   object-fit: contain;
   background-color: white;
+  color: #390D02 ;
+  padding: 20px;
+  box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.2), 0 0 0 2px rgb(255, 255, 255),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.2)
 }
 .card-img{
+  height:175px;
   object-fit:contain;
-  background-color: black;
+  box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255),
+  0.3em 0.3em 1em rgba(0, 0, 0, 0.1)
 } 
 .container {
   display: flex;
@@ -56,18 +69,19 @@ background-color: white;
 table {
   border-collapse: collapse;
   width: 100%;
+  border: solid black;
 }
 
 th,
 td {
-  border: 1px solid #ffffff;
+  border: 1px solid black;
   text-align: left;
   padding: 8px;
 }
 
 th {
   background-color: rgb(17, 21, 25);
-  color: white;
+  color: Black;
 }
 
 td {
@@ -90,7 +104,20 @@ td {
 }  */
 
 .table-image {
-height: 150px;
+height: 100%;
 width: 125px;
 object-fit: contain;
+}
+.edit-section {
+ background-color: white;
+ margin: 15px;
+margin-top: 10%;
+}
+.add-section  {
+  margin-top: 50px;
+  background-color: white;
+  color: white;
+}
+.add-h1 {
+  color: white;
 }

@@ -6,7 +6,7 @@ import CardImg from 'react-bootstrap/esm/CardImg'
 const ApiGameCard = (props) => {
 
   return (
-     <Card className="bg-dark text-white game-cards" key={props.id}>
+     <Card className="game-cards" key={props.id}>
                            <Carousel interval={5000}>
                     
                     {props.short_screenshots.map((image) =>{

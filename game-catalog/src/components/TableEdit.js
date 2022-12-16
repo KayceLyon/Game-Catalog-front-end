@@ -1,4 +1,5 @@
 import React from "react";
+
 const Edit = ({ game , handleEditSubmit, handleCancelClick, handleUpdateImg, handleUpdateTitle, handleUpdateDev, handleUpdatePub, handleUpdateGenre }) => {
 return (
 <tr>

@@ -12,10 +12,10 @@ const Navigation = (params) => {
   return (
     <>
       {['sm'].map((expand) => (
-        <Navbar key={expand} bg="light" expand={expand} className="mb-3">
+        <Navbar key={expand} expand={expand} className="mb-3">
           <Container fluid>
-                   <Navbar.Brand as={Link} to={"/games"}>Game2Play</Navbar.Brand>
-            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
+                   <Navbar.Brand className="navbarhome" as={Link} to={"/games"}>Game2Play</Navbar.Brand>
+            <Navbar.Toggle className="hamhamham" aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}

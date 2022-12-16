@@ -1,5 +1,6 @@
-import React, {useState, useEffect, Fragment} from 'react'
+import React, {useEffect} from 'react'
 import axios from 'axios'
+import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import '../App.css'
@@ -11,7 +12,6 @@ const Index = (params) => {
   const axiosRequest = [ 
     'http://localhost:3000/games',
     'https://api.rawg.io/api/games?key=7cb5d75256734799809d62c8e0796218&dates=2019-09-01,2019-09-30&platforms=18,1,7'
-    // 'https://api.rawg.io/api/platforms?key=7cb5d75256734799809d62c8e0796218'
   ]
  
  const getAllGames = () => { 
@@ -23,24 +23,16 @@ const Index = (params) => {
   })
   )
  }
-  const getGamesDB = () =>{
-    axios.get('http://localhost:3000/games')
-    .then((response)=>{
-      params.setGames(response.data);
-      params.setFilteredGames((response.data))
-    })
-  }
 
   useEffect(()=>{
-    // getGamesDB();
-    getAllGames()
+  getAllGames()
   }, []);
 
   return (
-    <div className='container'>
-        <main id="Index" className='index-section'>
+    <Container className='container' fluid>
+        <main id="Index">
           <h1>Inserted Games</h1>
-            <Row xs={1} md={4} className="g-4">
+            <Row xs={1} md={2} lg={3} className="g-4">
                 {params.filteredGames.map((game)=>{ 
                     return(
                         <Col key={game._id}>
@@ -58,12 +50,8 @@ const Index = (params) => {
         </main>
         <main>
           <h1>Third Party API Games</h1>
-        <Row xs={1} md={4} className="g-4">
+        <Row xs={1} md={2} lg={3} className="g-4">
         {params.apiGames.map((game) => {
-                    // for(let i=0; i < game.short_screenshots.length; i++){
-                    // console.count(game.short_screenshots.image);
-                    // }
-                    console.log(game.short_screenshots);
                   return(
                     <Col key={game.id}>
                       <ApiGames
@@ -78,7 +66,7 @@ const Index = (params) => {
                 )})}
             </Row>
 </main>
-    </div>
+    </Container>
   ) 
 }
 
