@@ -31,7 +31,7 @@ const Index = (params) => {
   return (
     <Container className='container' fluid>
         <main id="Index">
-          <h1>Inserted Games</h1>
+          <h1>My Game Collection</h1>
             <Row xs={1} md={2} lg={3} className="g-4">
                 {params.filteredGames.map((game)=>{ 
                     return(
@@ -49,7 +49,7 @@ const Index = (params) => {
             </Row>
         </main>
         <main>
-          <h1>Third Party API Games</h1>
+          <h1>Games</h1>
         <Row xs={1} md={2} lg={3} className="g-4">
         {params.apiGames.map((game) => {
                   return(
