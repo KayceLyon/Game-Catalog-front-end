@@ -1,8 +1,15 @@
 html {
   scroll-behavior: smooth;
 }
-
-.create-section {
+body {
+background-color: white;
+}
+.offcanvas-link{
+  text-decoration: none;
+  color: black;
+  font-size: 25px;
+}
+/* .create-section {
   margin-top: 150px;
   margin-bottom: 150px;
   height: 25vh;
@@ -17,17 +24,18 @@ html {
   height: fit-content;
   margin-bottom: 150px;
   margin-top: 150px;
-}
+} */
 .game-cards{
 height: 300px;
 object-fit: contain;
+background-color: white;
 }
 
 .card-img{
   height: 50%;
   width: 100%;  
   object-fit:contain;
-  background-color: white;
+  background-color: black;
 } 
 
 .container {
@@ -59,10 +67,10 @@ td {
   color: black;
 }
 
-form {
+/* form {
   display: flex;
   gap: 5px;
-}
+} */
 
 /* form td:last-child {
   display: flex;

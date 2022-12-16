@@ -11,7 +11,7 @@ import Login from './components/Login'
 
 const App = () => {
 
-  const [apiGames, setApiGames] = useState()
+  const [apiGames, setApiGames] = useState([])
   const [games, setGames] = useState([])
   const [formData, setFormData] = useState({
     title: "",
