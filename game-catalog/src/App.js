@@ -6,9 +6,7 @@ import GameForm from './components/GameForm'
 import Index from './components/Index'
 import EditForm from './components/EditForm'
 import Navigation from './components/Navigation'
-// import LoginButton from './components/LoginButton'
-// import LogoutButton from './components/LogoutButton';
-import Profile from './components/Profile';
+
 
 const App = () => {
   
@@ -24,8 +22,6 @@ const App = () => {
   })
   const [searchParams, setSearchParams] = useSearchParams({query: ""})
   const [filteredGames, setFilteredGames] = useState([])
-  const { user, isAuthenticated, isLoading } = useAuth0();
-
 
   return (
     <>

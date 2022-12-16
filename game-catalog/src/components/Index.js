@@ -10,7 +10,7 @@ import ApiGames from './ApiGames'
 
 const Index = (params) => {
   const axiosRequest = [ 
-    'http://localhost:3000/games',
+    'https://game2play-backend.herokuapp.com/games',
     'https://api.rawg.io/api/games?key=7cb5d75256734799809d62c8e0796218&dates=2019-09-01,2019-09-30&platforms=18,1,7'
   ]
  
